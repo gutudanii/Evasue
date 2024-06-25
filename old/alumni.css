@@ -1,0 +1,101 @@
+
+.alumni{
+    margin-bottom: 1%;
+    background-image: url('img/alumn.webp');
+    background-repeat: no-repeat ;
+    background-size: 100%;
+}
+.alumni-head{
+    color: white;
+    width: 100%;
+    height: 30vh;
+    background-color: rgba(0, 0, 0, 0.336);
+    margin-top: 0.5%;
+    text-align: center;
+}
+.alumni-head h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    padding-top: 3.9%;
+    letter-spacing: 10px;
+}
+.container_header_alumni{
+    width: 100%;
+    height: auto;
+    color: rgb(20, 1, 1);
+}
+.container_header_alumni div {
+    position: relative;
+    border-color: darkred;
+    border-width: 1px;
+    display: inline-flex;
+    color: rgb(20, 1, 1);
+    width: 31%;
+    margin: 1%;
+    height: 70px;
+    border-radius: 20px;
+}
+
+.container_header_alumni div::before {
+    content: "";
+    position: absolute;
+    color: rgb(20, 1, 1);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    filter: blur(3px); /* Adjust the blur radius as needed */
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.container_header_alumni div img{
+    margin: 1%;
+    border-radius: 10px;
+    width: auto;
+    height: auto;
+}
+.container_header_alumni div p{
+    font-weight: bolder;
+    color: rgb(20, 1, 1);
+    margin: 2%;
+}
+.container_header_alumni div a{
+    margin: 2%;
+    color: rgb(20, 1, 1);
+    text-decoration: none;
+    padding: 5px;
+    border: 1px groove rgb(153, 19, 19) ;
+    font-weight: bolder;
+    border-radius: 5px;
+    transition: all 1s;
+}
+.container_header_alumni div a:hover{
+    background-color: rgb(218, 213, 213);
+    color: rgb(20, 1, 1);
+    border: none;
+    border-radius: 5px;
+    transition: all 1s;
+}
+@media (max-width: 843px) {
+    .alumni-head{
+        width: 107.5%;
+        height: 15vh;
+    }
+
+    .nav-div2{
+        margin: 1%;
+    }
+
+    .alumni-head h1{
+        padding-top: 7%;
+        font-size: larger;
+    }
+    .container_header_alumni div{
+        display: auto;
+        width: 100%;
+        height: 50px;
+        color: rgb(20, 1, 1);
+    }
+}

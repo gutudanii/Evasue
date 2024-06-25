@@ -5,6 +5,10 @@ function toggleMenu() {
     }
 }
 
+function closeAlumni(){
+    var view = document.getElementById("alumni-pop");
+    view.style.display = view.style.display === "grid" ? "none" : "grid";
+}
 function donate(){
     var view = document.getElementById("donate");
     view.style.display = view.style.display === "grid" ? "none" : "grid";
@@ -43,124 +47,66 @@ const imageElement = document.getElementById("image");
 const prevButton = document.getElementById("prev-button");
 const nextButton = document.getElementById("next-button");
 
-function showImage(index) {
-    imageElement.src = images[index];
-    imageElement.alt = `Image ${index + 1}`;
-}
-
-showImage(currentImageIndex);
-
-prevButton.addEventListener("click", function () {
-    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-    showImage(currentImageIndex);
-});
-
-nextButton.addEventListener("click", function () {
-    currentImageIndex = (currentImageIndex + 1) % images.length;
-    showImage(currentImageIndex);
-});
-
-// function monday(){
-//     var mon = document.getElementById("program-monday"); 
-//     var teu = document.getElementById("program-teusday"); 
-//     var wed = document.getElementById("program-wednsday"); 
-//     var thu = document.getElementById("program-thursday"); 
-//     var fri = document.getElementById("program-friday"); 
-//     var sat = document.getElementById("program-saturday"); 
-//     var sun = document.getElementById("program-sunday"); 
-
-//     var m = document.getElementById("m"); 
-//     var t = document.getElementById("t"); 
-//     var w = document.getElementById("w"); 
-//     var th = document.getElementById("th"); 
-//     var f = document.getElementById("f"); 
-//     var s = document.getElementById("sa"); 
-//     var su = document.getElementById("su"); 
-
-//     mon.style.display = "grid";
-//     teu.style.display = "none";
-//     wed.style.display = "none";
-//     thu.style.display = "none";
-//     fri.style.display = "none";
-//     sat.style.display = "none";
-//     sun.style.display = "none";
-    
-//     m.style.backgroundColor = "rgb(14, 123, 150)";
-//     t.style.backgroundColor = "rgba(14, 123, 150, 0.479)";
-//     w.style.backgroundColor = "rgba(14, 123, 150, 0.479)";
-//     th.style.backgroundColor = "rgba(14, 123, 150, 0.479)";
-//     f.style.backgroundColor = "rgba(14, 123, 150, 0.479)";
-//     s.style.backgroundColor = "rgba(14, 123, 150, 0.479)";
-//     su.style.backgroundColor = "rgba(14, 123, 150, 0.479)";
-
+// function showImage(index) {
+//     imageElement.src = images[index];
+//     imageElement.alt = `Image ${index + 1}`;
 // }
 
-// function teusday(){
-//     var mon = document.getElementById("program-monday"); 
-//     var teu = document.getElementById("program-teusday"); 
-//     var wed = document.getElementById("program-wednsday"); 
-//     var thu = document.getElementById("program-thursday"); 
-//     var fri = document.getElementById("program-friday"); 
-//     var sat = document.getElementById("program-saturday"); 
-//     var sun = document.getElementById("program-sunday"); 
+// showImage(currentImageIndex);
 
-//     var m = document.getElementById("m"); 
-//     var t = document.getElementById("t"); 
-//     var w = document.getElementById("w"); 
-//     var th = document.getElementById("th"); 
-//     var f = document.getElementById("f"); 
-//     var s = document.getElementById("sa"); 
-//     var su = document.getElementById("su"); 
+// prevButton.addEventListener("click", function () {
+//     currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+//     showImage(currentImageIndex);
+// });
 
-//     mon.style.display = "none";
-//     teu.style.display = "grid";
-//     wed.style.display = "none";
-//     thu.style.display = "none";
-//     fri.style.display = "none";
-//     sat.style.display = "none";
-//     sun.style.display = "none";
-    
-//     m.style.backgroundColor = "rgba(14, 123, 150, 0.479)"; 
-//     t.style.backgroundColor = "rgb(14, 123, 150)";
-//     w.style.backgroundColor = "rgba(14, 123, 150, 0.479)";
-//     th.style.backgroundColor = "rgba(14, 123, 150, 0.479)";
-//     f.style.backgroundColor = "rgba(14, 123, 150, 0.479)";
-//     s.style.backgroundColor = "rgba(14, 123, 150, 0.479)";
-//     su.style.backgroundColor = "rgba(14, 123, 150, 0.479)";
+// nextButton.addEventListener("click", function () {
+//     currentImageIndex = (currentImageIndex + 1) % images.length;
+//     showImage(currentImageIndex);
+// });
+// function showDay(dayId, menuId) {
+//     const days = document.querySelectorAll('.program-day');
+//     days.forEach(day => {
+//         day.classList.remove('active');
+//     });
+//     document.getElementById(dayId).classList.add('active');
 
+//     const menuItems = document.querySelectorAll('.day-menu p');
+//     menuItems.forEach(item => {
+//         item.style.backgroundColor = 'rgba(14, 123, 150, 0.479)';
+//     });
+//     document.getElementById(menuId).style.backgroundColor = 'rgb(14, 123, 150)';
 // }
 
+// function showDay(day, d) {
+//     var daysElements = {
+//         "mon": document.getElementById("program-monday"),
+//         "tue": document.getElementById("program-teusday"),
+//         "wed": document.getElementById("program-wednsday"),
+//         "thu": document.getElementById("program-thursday"),
+//         "fri": document.getElementById("program-friday"),
+//         "sat": document.getElementById("program-saturday"),
+//         "sun": document.getElementById("program-sunday")
+//     };
 
-function showDay(day, d) {
-    var daysElements = {
-        "mon": document.getElementById("program-monday"),
-        "tue": document.getElementById("program-teusday"),
-        "wed": document.getElementById("program-wednsday"),
-        "thu": document.getElementById("program-thursday"),
-        "fri": document.getElementById("program-friday"),
-        "sat": document.getElementById("program-saturday"),
-        "sun": document.getElementById("program-sunday")
-    };
+//     var buttonElements = {
+//         "m": document.getElementById("m"),
+//         "t": document.getElementById("t"),
+//         "w": document.getElementById("w"),
+//         "th": document.getElementById("th"),
+//         "f": document.getElementById("f"),
+//         "sa": document.getElementById("sa"),
+//         "su": document.getElementById("su")
+//     };
 
-    var buttonElements = {
-        "m": document.getElementById("m"),
-        "t": document.getElementById("t"),
-        "w": document.getElementById("w"),
-        "th": document.getElementById("th"),
-        "f": document.getElementById("f"),
-        "sa": document.getElementById("sa"),
-        "su": document.getElementById("su")
-    };
+//     for (var key in daysElements) {
+//         daysElements[key].style.display = "none";
+//     }
 
-    for (var key in daysElements) {
-        daysElements[key].style.display = "none";
-    }
+//     daysElements[day].style.display = "grid";
 
-    daysElements[day].style.display = "grid";
+//     for (var key in buttonElements) {
+//         buttonElements[key].style.backgroundColor = "rgba(14, 123, 150, 0.479)";
+//     }
 
-    for (var key in buttonElements) {
-        buttonElements[key].style.backgroundColor = "rgba(14, 123, 150, 0.479)";
-    }
-
-    buttonElements[d].style.backgroundColor = "rgb(14, 123, 150)";
-}
+//     buttonElements[d].style.backgroundColor = "rgb(14, 123, 150)";
+// }

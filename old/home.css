@@ -283,7 +283,6 @@ body{
     .about-us-letter{
         position:static;
         font-size: 10px;
-        margin-left: 2%;
         letter-spacing: 3px;
         top: 0%;
         left: 0%;
@@ -393,29 +392,6 @@ body{
       position: unset;
     }
   }
-  #alumni-pop{
-    transition: all 1.5s;
-    position:fixed;
-    top: 10%;
-    width: 70%;
-    margin-left: 15%;
-    background-color: rgb(238, 243, 243);
-    height: 450px;
-    display: none;
-    border-radius: 20px;
-    color: black;
-    box-shadow: 1px 2px 100px black;
-    overflow-y: scroll;
-}
-#alumni-pop img{
-    width: 50%; 
-    max-width: 350px;
-    height: 30vh;
-    margin-left: 32%;
-    margin-top: 2%;
-    border-radius: 5px;
-    margin-bottom: 0;
-}
 
   .coming-soon{
     transition: all 1.5s;
@@ -447,14 +423,6 @@ body{
 }
 
 @media (max-width: 570px) {
-    #alumni-pop{
-        margin-left: 0;
-        margin-right: 1%;
-        width: 93%;     
-      }
-      #alumni-pop img{
-        height: 18vh;
-      }
     .coming-soon img{
         width: 50%;
     }

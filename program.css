@@ -1,117 +1,104 @@
 #programs {
-    margin:2%;
+    margin: 2%;
 }
-#programs h1{
+
+#programs h1 {
     font-weight: bolder;
     font-size: 40px;
 }
-#up{
+
+#up {
     font-weight: bolder;
     margin-top: 5px;
     color: darkgray;
 }
-.our-program{
-    display: inline-flex;
+
+.our-program {
+    display: flex;
+    flex-wrap: wrap;
     margin: 2%;
     width: 98%;
     color: rgb(14, 123, 150);
+    justify-content: center;
 }
-.our-program div{
-    margin: 2%;
-    width: 50%;
-    /* text-align: center; */
-    top: 0;
-    left: 23%;
-    position: relative;
+
+.our-program .program-day {
+    margin: 1%;
+    width: 48%;
+    box-sizing: border-box;
+    display: none; /* Initially hidden, shown via JavaScript */
+    flex-direction: column;
+    align-items: center;
 }
-.our-program div p{
-    padding: 10px;
+
+.program-day h4 {
+    text-align: center;
+}
+
+.program-details {
+    display: flex;
+    /* flex-direction: column; */
+    gap: 10px;
     background-color: rgb(241, 237, 237);
-    margin: 2%;
-    width: 60%;
-    left: 18%;
-    position: relative;
+    padding: 10px;
+    border-radius: 7%;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 1%;
+}
+
+.program-details p {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: white;
     border-radius: 7%;
 }
-.day-menu{
-    display: inline-flex;
+
+.day-menu {
+    display: flex;
+    justify-content: center;
     margin: 2%;
-    top: 0;
-    left: 25%;
-    position: relative;
 }
-.day-menu p{
+
+.day-menu p {
     margin: 1%;
     cursor: pointer;
     color: white;
     border-radius: 10px;
-    /* font-weight: bolder; */
     text-align: center;
     background-color: rgba(14, 123, 150, 0.479);
-    padding: 4px;    
+    padding: 10px;
 }
-.days{
+
+.days {
     border: 1px solid rgb(14, 123, 150);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     background-color: rgb(14, 123, 150);
     padding: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
     color: white !important;
-}
-#program-monday{
-    display: grid;    
-}
-#program-teusday{
-    display: none;   
-}
-#program-wednsday{
-    display: none;   
-}
-#program-thursday{
-    display: none;   
-}
-#program-friday{
-    display: none;   
-}
-#program-saturday{
-    display: none;   
-}
-#program-sunday{
-    display: none;   
+    margin-bottom: 10px;
 }
 
-#m{
-    background-color: rgb(14, 123, 150);
-}
 @media (max-width: 843px) {
-    .day-menu{
-        display: grid;
-        margin: 2%;
-        top: 0;
-        left: 0%;
-        position: relative;
-    }   
-    .day-menu p{
-        padding-left: 0;
-        padding-right: 0;
-        padding: 1px;
+    .day-menu {
+        flex-direction: column;
+        align-items: center;
     }
-    .our-program{
+
+    .our-program {
+        flex-direction: column;
         margin: 1%;
         width: 100%;
     }
-    .our-program div{
-        margin: 1%;
+
+    .our-program .program-day {
         width: 100%;
-        text-align: center;
-        top: 0;
-        left: 0;
+        margin: 1% 0;
     }
-    .our-program div p{
-        width: 90%;
-        left: 0;
+
+    .program-details {
+        padding: 10px;
         border-radius: 20%;
     }
 }
