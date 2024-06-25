@@ -5,6 +5,24 @@ function toggleMenu() {
     }
 }
 
+function showDay(dayId, menuId) {
+        var days = document.querySelectorAll('.program-day');
+        days.forEach(function(day) {
+            day.style.display = 'none';
+        });
+
+        var menus = document.querySelectorAll('.day-menu p');
+        menus.forEach(function(menu) {
+            menu.style.backgroundColor = 'rgba(14, 123, 150, 0.479)';
+        });
+
+        document.getElementById(dayId).style.display = 'block';
+        document.getElementById(menuId).style.backgroundColor = 'rgb(14, 123, 150)';
+    }
+
+    // Initially show Monday's program
+    showDay('program-monday', 'm');
+
 function closeAlumni(){
     var view = document.getElementById("alumni-pop");
     view.style.display = view.style.display === "grid" ? "none" : "grid";
