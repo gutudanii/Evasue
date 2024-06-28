@@ -297,12 +297,13 @@ body{
         font-size: 20px;
     }
     .about-us-body{
-        margin: 3%;
+        margin-top: 3%;
         text-align: center;
         margin-left: 10%;
         align-items: center;
         display: grid;
         margin-bottom: 5%;
+        height: auto;
     }
     .about-us-body img{
         display: none;
