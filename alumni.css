@@ -40,7 +40,8 @@
     padding: 10px;
     text-align: center;
     width: 90%; 
-    max-width: 400px;    
+    max-width: 400px;
+    transition: all 0.9s;
 }
 
 .box-alumni img {
@@ -69,7 +70,10 @@
     border-radius: 5px;
     transition: all 0.5s;
 }
-
+.box-alumni:hover{
+    transition: all 0.9s;
+    box-shadow: 1px 2px 90px rgb(177, 174, 174);
+}
 .box-alumni a:hover {
     background-color: rgb(109, 127, 175);
     color: rgb(255, 251, 251);

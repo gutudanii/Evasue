@@ -30,6 +30,11 @@
     margin: 5px;
     text-decoration: none;
     color: black;
+    transition: all 1s;
+}
+.leader a:hover{
+    transition: all 1s;
+    color: darkblue;
 }
 
 @media (max-width: 843px) {
