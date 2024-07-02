@@ -11,6 +11,20 @@
     <link rel="stylesheet" href="leaders.css">
     <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="alumni.css">
+    <style>
+        body {
+            scroll-behavior: smooth;
+        }
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
     <nav class="nav-bar">
@@ -25,7 +39,7 @@
 
         <div id="menubar" class="nav-div2">
             <a class="fas fa-bars" id="first-child" onclick="menu()"> <b style="letter-spacing: 0px;">Menu</b></a>
-           <span id="menu-a">
+           <span id="menu-a" >
             <a href="#menubar">Home</a>
             <a href="#blog">Blog</a>
             <a href="/videos.html">Videos</a>
@@ -38,12 +52,22 @@
             <a id="last-child" onclick="donate()">Donate</a>
         </div>
     </nav>
-    <section id="home">
+    <section id="home"  class="section">
         <div class="home">
-            <a><img id="image" src="img/image1.png" alt=""></a>
-            <div id="prev-button" class="nav-button">&lt;</div>
-            <div id="next-button" class="nav-button">&gt;</div>
-        </div>
+            <div class="slider">
+                <div class="slides">
+                  <img class="slide" src="img/image1.png" alt="Image 1">
+                  <img class="slide" src="img/image2.jpg" alt="Image 2">
+                  <img class="slide" src="img/image3.jpg" alt="Image 3">
+                </div>
+                <div class="indicators">
+                  <span class="indicator" data-index="0">1</span>
+                  <span class="indicator" data-index="1">2</span>
+                  <span class="indicator" data-index="2">3</span>
+                </div>
+              </div>
+
+            </div>
 
     <br>
     <h1 align="center">Our Latest Videos</h1>
@@ -54,7 +78,7 @@
             <tr>
                 <td>
                     <div class="box-alumni">
-                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/S-rOWaiKPgk?si=Tr_Ngc_eZDJrvvw_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                            
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/hB4gFkU4Mgk?si=2C-z1sR3448kpmuG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                            
                         <p style="font-size: medium;">Sunday Program | መቱ ዩኒቨርሲቲ ኢቫሱ ማህበር ብሎግ | Worship Team </p>
                         <br><br>
                         <a href="">Watch Now</a>        
@@ -63,7 +87,7 @@
                
                 <td>
                     <div class="box-alumni">
-                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/Aim57FtqDjE?si=P2IkVqDNBAmivX3r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                         
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/Aim57FtqDjE?si=g0NLDBxuDO8_MNP_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                         
                         <p style="font-size: medium;">Sunday Program | መቱ ዩኒቨርሲቲ ኢቫሱ ማህበር ብሎግ | Worship Team </p>
                         <br><br>
                         <a href="#">Watch Now</a>
@@ -84,7 +108,7 @@
 
     </section>
 
-    <section id="blog">
+    <section id="blog"  class="section">
         <div class="blog">
             <div class="left-blog">
                 <h2 style="font-weight: bolder;">Blog Website</h2>
@@ -106,7 +130,7 @@
             </div>
         </div>
     </section>
-    <section id="about">
+    <section id="about"  class="section">
         <!-- <div class="about-us-header"> -->
             <!-- <img src="img/about.jpg" alt="" srcset=""> -->
             <!-- <div class="about-us-letter">
@@ -134,7 +158,7 @@
            </div>
         </div>
     </section>
-    <section id="alumni">
+    <section id="alumni" class="section">
         <div class="alumni">
             <div class="alumni-head">
                 <h1>ALUMNI</h1>
@@ -275,7 +299,7 @@
         <br><br>
         <hr style="width: 80%; margin-left: 10%;">
     </section>
-    <section id="programs">
+    <section id="programs"  class="section">
         <h1 style="font-size: 40px; padding-top: 3%;" align="center">Weekly Program</h1>
         <p id="up" align="center">Updated on 2 January 2023</p>
         <div class="day-menu">
@@ -363,7 +387,7 @@
     <hr style="width: 80%; margin-left: 10%;">
     <br><br>
     
-    <section id="leaders">
+    <section id="leaders"  class="section">
         <h1 style="font-size: 40px;" align="center">Leaders</h1>
         <p id="up" align="center">Our Main Leaders (as of 2024)</p>
         <div class="leaders-container">
@@ -426,7 +450,7 @@
         </div>
     </section>    
 
-    <section id="contact">
+    <section id="contact"  class="section">
         <div class="form-container">
             <div class="left-corner-form">
                     <h1>Connect With Us!</h1>
@@ -463,7 +487,7 @@
         </div>
     </section>
 
-    <section id="donate">
+    <section id="donate"  class="section">
         <div class="donate-view">
             <p class="donate-view-p" onclick="donate()">Close</p>
             <div class="donate-sub-p">

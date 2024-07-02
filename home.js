@@ -38,80 +38,6 @@ function menu(){
     menuA.style.display = menuA.style.display === "grid" ? "none" : "grid";  
 }
 
-
-
-const images = ["img/image1.png", "img/image2.jpg", "img/image3.jpg", "img/image4.jpg"
-,"img/image5.jpg", "img/image6.jpg" ]; // Replace with your image file names
-let currentImageIndex = 0;
-const imageElement = document.getElementById("image");
-const prevButton = document.getElementById("prev-button");
-const nextButton = document.getElementById("next-button");
-
-// function showImage(index) {
-//     imageElement.src = images[index];
-//     imageElement.alt = `Image ${index + 1}`;
-// }
-
-// showImage(currentImageIndex);
-
-// prevButton.addEventListener("click", function () {
-//     currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-//     showImage(currentImageIndex);
-// });
-
-// nextButton.addEventListener("click", function () {
-//     currentImageIndex = (currentImageIndex + 1) % images.length;
-//     showImage(currentImageIndex);
-// });
-// function showDay(dayId, menuId) {
-//     const days = document.querySelectorAll('.program-day');
-//     days.forEach(day => {
-//         day.classList.remove('active');
-//     });
-//     document.getElementById(dayId).classList.add('active');
-
-//     const menuItems = document.querySelectorAll('.day-menu p');
-//     menuItems.forEach(item => {
-//         item.style.backgroundColor = 'rgba(14, 123, 150, 0.479)';
-//     });
-//     document.getElementById(menuId).style.backgroundColor = 'rgb(14, 123, 150)';
-// }
-
-// function showDay(day, d) {
-//     var daysElements = {
-//         "mon": document.getElementById("program-monday"),
-//         "tue": document.getElementById("program-teusday"),
-//         "wed": document.getElementById("program-wednsday"),
-//         "thu": document.getElementById("program-thursday"),
-//         "fri": document.getElementById("program-friday"),
-//         "sat": document.getElementById("program-saturday"),
-//         "sun": document.getElementById("program-sunday")
-//     };
-
-//     var buttonElements = {
-//         "m": document.getElementById("m"),
-//         "t": document.getElementById("t"),
-//         "w": document.getElementById("w"),
-//         "th": document.getElementById("th"),
-//         "f": document.getElementById("f"),
-//         "sa": document.getElementById("sa"),
-//         "su": document.getElementById("su")
-//     };
-
-//     for (var key in daysElements) {
-//         daysElements[key].style.display = "none";
-//     }
-
-//     daysElements[day].style.display = "grid";
-
-//     for (var key in buttonElements) {
-//         buttonElements[key].style.backgroundColor = "rgba(14, 123, 150, 0.479)";
-//     }
-
-//     buttonElements[d].style.backgroundColor = "rgb(14, 123, 150)";
-// }
-
-
 function showDay(dayId, menuId) {
     var days = document.querySelectorAll('.program-day');
     days.forEach(function(day) {
@@ -129,3 +55,56 @@ function showDay(dayId, menuId) {
 
 // Initially show Monday's program
 showDay('program-monday', 'm');
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('.section');
+    const options = {
+        threshold: 0.1
+    };
+    const observer = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, options);
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.slide');
+    const indicators = document.querySelectorAll('.indicator');
+    let currentIndex = 0;
+    const slideInterval = 7000;
+  
+    const updateSlide = (index) => {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+  
+      indicators.forEach((indicator, i) => {
+        indicator.classList.toggle('active', i === index);
+      });
+  
+      currentIndex = index;
+    };
+  
+    const nextSlide = () => {
+      const nextIndex = (currentIndex + 1) % slides.length;
+      updateSlide(nextIndex);
+    };
+  
+    indicators.forEach(indicator => {
+      indicator.addEventListener('click', () => {
+        const index = parseInt(indicator.getAttribute('data-index'));
+        updateSlide(index);
+      });
+    });
+  
+    updateSlide(currentIndex);
+    setInterval(nextSlide, slideInterval);
+  });
+  
